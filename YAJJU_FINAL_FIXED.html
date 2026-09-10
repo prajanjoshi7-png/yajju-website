@@ -3,481 +3,492 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Just For You ❤️</title>
+<title>YAJJU ❤️</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: "Segoe UI", sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-    color: #5b3341;
+body{
+    font-family:"Segoe UI",sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#5b3341;
 }
 
-/* ---------- GENERAL ---------- */
-
-.page {
-    min-height: 100vh;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 20px;
-    position: relative;
-    overflow: hidden;
+.page{
+    min-height:100vh;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:30px 20px;
+    position:relative;
+    overflow:hidden;
 }
 
-.page.active {
-    display: flex;
+.page.active{
+    display:flex;
 }
 
-button {
-    font-family: inherit;
-    cursor: pointer;
-    position: relative;
-    z-index: 100;
+button{
+    font-family:inherit;
+    cursor:pointer;
 }
 
-/* ---------- BACKGROUND ---------- */
+/* BACKGROUND */
 
-.page::before {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: rgba(255, 182, 193, 0.22);
-    border-radius: 50%;
-    filter: blur(70px);
-    top: -180px;
-    left: -150px;
+.page::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(255,182,193,.22);
+    border-radius:50%;
+    filter:blur(70px);
+    top:-180px;
+    left:-150px;
 }
 
-.page::after {
-    content: "";
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    background: rgba(255, 214, 224, 0.3);
-    border-radius: 50%;
-    filter: blur(70px);
-    bottom: -200px;
-    right: -150px;
+.page::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:rgba(255,214,224,.3);
+    border-radius:50%;
+    filter:blur(70px);
+    bottom:-200px;
+    right:-150px;
 }
 
-/* ---------- PASSWORD PAGE ---------- */
+/* PASSWORD */
 
-#passwordPage {
-    background: linear-gradient(135deg, #fff0f3, #ffe4ec, #fff7f8);
+#passwordPage{
+    background:linear-gradient(135deg,#fff0f3,#ffe4ec,#fff7f8);
 }
 
-.password-card {
-    width: min(430px, 92%);
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(18px);
-    padding: 45px 30px;
-    border-radius: 30px;
-    text-align: center;
-    box-shadow: 0 20px 60px rgba(135, 60, 80, 0.15);
-    border: 1px solid rgba(255,255,255,0.8);
-    position: relative;
-    z-index: 2;
+.password-card{
+    width:min(430px,92%);
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(18px);
+    padding:45px 30px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(135,60,80,.15);
+    border:1px solid rgba(255,255,255,.8);
+    position:relative;
+    z-index:2;
 }
 
-.lock {
-    font-size: 55px;
-    margin-bottom: 15px;
-    animation: float 3s ease-in-out infinite;
+.lock{
+    font-size:55px;
+    margin-bottom:15px;
+    animation:float 3s ease-in-out infinite;
 }
 
-.password-card h1 {
-    font-size: 30px;
-    margin-bottom: 10px;
+.password-card h1{
+    font-size:30px;
+    margin-bottom:10px;
 }
 
-.password-card p {
-    color: #8d6874;
-    margin-bottom: 25px;
+.password-card p{
+    color:#8d6874;
+    margin-bottom:25px;
 }
 
-.password-input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #f3c5d1;
-    border-radius: 15px;
-    outline: none;
-    text-align: center;
-    font-size: 18px;
-    letter-spacing: 5px;
-    background: rgba(255,255,255,0.8);
+.password-input{
+    width:100%;
+    padding:15px;
+    border:2px solid #f3c5d1;
+    border-radius:15px;
+    outline:none;
+    text-align:center;
+    font-size:18px;
+    letter-spacing:5px;
+    background:rgba(255,255,255,.8);
 }
 
-.password-input:focus {
-    border-color: #e89aaa;
+.password-input:focus{
+    border-color:#e89aaa;
 }
 
 .enter-btn,
-.next-btn {
-    border: none;
-    padding: 14px 30px;
-    margin-top: 18px;
-    border-radius: 30px;
-    background: linear-gradient(135deg, #e9899d, #d96f88);
-    color: white;
-    font-size: 16px;
-    box-shadow: 0 10px 25px rgba(217,111,136,0.25);
-    transition: 0.3s;
+.next-btn{
+    border:none;
+    padding:14px 30px;
+    margin-top:18px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#e9899d,#d96f88);
+    color:white;
+    font-size:16px;
+    box-shadow:0 10px 25px rgba(217,111,136,.25);
+    transition:.3s;
 }
 
 .enter-btn:hover,
-.next-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(217,111,136,0.35);
+.next-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(217,111,136,.35);
 }
 
-.error {
-    color: #d85d75;
-    margin-top: 15px;
-    display: none;
+.error{
+    color:#d85d75;
+    margin-top:15px;
+    display:none;
 }
 
-/* ---------- MESSAGE PAGE ---------- */
+/* MESSAGE */
 
-#messagePage {
-    background: linear-gradient(135deg, #fff1f4, #ffe8ee, #fff8f8);
+#messagePage{
+    background:linear-gradient(135deg,#fff1f4,#ffe8ee,#fff8f8);
 }
 
-.message-card {
-    width: min(850px, 94%);
-    background: rgba(255,255,255,0.68);
-    backdrop-filter: blur(18px);
-    padding: 45px;
-    border-radius: 35px;
-    box-shadow: 0 25px 70px rgba(130, 55, 75, 0.13);
-    position: relative;
-    z-index: 2;
+.message-card{
+    width:min(850px,94%);
+    background:rgba(255,255,255,.68);
+    backdrop-filter:blur(18px);
+    padding:45px;
+    border-radius:35px;
+    box-shadow:0 25px 70px rgba(130,55,75,.13);
+    position:relative;
+    z-index:2;
 }
 
-.message-card h1 {
-    text-align: center;
-    font-size: clamp(27px, 5vw, 42px);
-    margin-bottom: 30px;
+.message-card h1{
+    text-align:center;
+    font-size:clamp(27px,5vw,42px);
+    margin-bottom:30px;
 }
 
-.message-text {
-    font-size: 18px;
-    line-height: 1.9;
-    white-space: pre-line;
-    min-height: 390px;
+.message-text{
+    font-size:18px;
+    line-height:1.9;
+    white-space:pre-line;
+    min-height:390px;
 }
 
-.next-container {
-    text-align: center;
-    opacity: 0;
-    transition: 1s;
+.next-container{
+    text-align:center;
+    opacity:0;
+    transition:1s;
 }
 
-.next-container.show {
-    opacity: 1;
+.next-container.show{
+    opacity:1;
 }
 
-/* ---------- GIFTS PAGE ---------- */
+/* GIFTS */
 
-#giftsPage {
-    background: linear-gradient(135deg, #fff1f4, #ffe5ed, #fff6f8);
-    flex-direction: column;
+#giftsPage{
+    background:linear-gradient(135deg,#fff1f4,#ffe5ed,#fff6f8);
+    flex-direction:column;
 }
 
-.gifts-title {
-    text-align: center;
-    position: relative;
-    z-index: 2;
-    margin-bottom: 40px;
+.gifts-title{
+    text-align:center;
+    position:relative;
+    z-index:2;
+    margin-bottom:40px;
 }
 
-.gifts-title h1 {
-    font-size: clamp(30px, 6vw, 45px);
+.gifts-title h1{
+    font-size:clamp(30px,6vw,45px);
 }
 
-.gifts-title p {
-    margin-top: 10px;
-    color: #8d6874;
+.gifts-title p{
+    margin-top:10px;
+    color:#8d6874;
 }
 
-.gifts-container {
-    width: min(1000px, 95%);
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    position: relative;
-    z-index: 2;
+.gifts-container{
+    width:min(1000px,95%);
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+    position:relative;
+    z-index:2;
 }
 
-.gift-wrapper {
-    text-align: center;
+.gift-wrapper{
+    text-align:center;
 }
 
-.gift {
-    height: 170px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
+.gift{
+    height:170px;
+    position:relative;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.gift:hover {
-    transform: translateY(-8px);
+.gift:hover{
+    transform:translateY(-8px);
 }
 
-.gift-box {
-    position: absolute;
-    width: 110px;
-    height: 90px;
-    background: #e9899d;
-    left: 50%;
-    bottom: 15px;
-    transform: translateX(-50%);
-    border-radius: 5px;
-    box-shadow: 0 15px 25px rgba(170,70,95,0.2);
+.gift-box{
+    position:absolute;
+    width:110px;
+    height:90px;
+    background:#e9899d;
+    left:50%;
+    bottom:15px;
+    transform:translateX(-50%);
+    border-radius:5px;
+    box-shadow:0 15px 25px rgba(170,70,95,.2);
 }
 
-.gift-box::before {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 100%;
-    background: #f7c1cc;
-    left: 50%;
-    transform: translateX(-50%);
+.gift-box::before{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:100%;
+    background:#f7c1cc;
+    left:50%;
+    transform:translateX(-50%);
 }
 
-.gift-lid {
-    position: absolute;
-    width: 125px;
-    height: 25px;
-    background: #d96f88;
-    left: 50%;
-    bottom: 100px;
-    transform: translateX(-50%);
-    border-radius: 5px;
-    transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);
-    z-index: 3;
+.gift-lid{
+    position:absolute;
+    width:125px;
+    height:25px;
+    background:#d96f88;
+    left:50%;
+    bottom:100px;
+    transform:translateX(-50%);
+    border-radius:5px;
+    transition:.8s cubic-bezier(.68,-.55,.27,1.55);
+    z-index:3;
 }
 
-.gift-lid::before {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 25px;
-    background: #f7c1cc;
-    left: 50%;
-    transform: translateX(-50%);
+.gift-lid::before{
+    content:"";
+    position:absolute;
+    width:18px;
+    height:25px;
+    background:#f7c1cc;
+    left:50%;
+    transform:translateX(-50%);
 }
 
-.ribbon {
-    position: absolute;
-    width: 18px;
-    height: 90px;
-    background: #f7c1cc;
-    left: 50%;
-    bottom: 15px;
-    transform: translateX(-50%);
+.ribbon{
+    position:absolute;
+    width:18px;
+    height:90px;
+    background:#f7c1cc;
+    left:50%;
+    bottom:15px;
+    transform:translateX(-50%);
 }
 
-.bow {
-    position: absolute;
-    left: 50%;
-    bottom: 117px;
-    transform: translateX(-50%);
-    z-index: 4;
-    transition: 0.8s;
+.bow{
+    position:absolute;
+    left:50%;
+    bottom:117px;
+    transform:translateX(-50%);
+    z-index:4;
+    transition:.8s;
 }
 
 .bow::before,
-.bow::after {
-    content: "";
-    position: absolute;
-    width: 38px;
-    height: 25px;
-    background: #f7c1cc;
-    border-radius: 50% 50% 10% 50%;
+.bow::after{
+    content:"";
+    position:absolute;
+    width:38px;
+    height:25px;
+    background:#f7c1cc;
+    border-radius:50% 50% 10% 50%;
 }
 
-.bow::before {
-    right: 3px;
-    transform: rotate(25deg);
+.bow::before{
+    right:3px;
+    transform:rotate(25deg);
 }
 
-.bow::after {
-    left: 3px;
-    transform: rotate(-25deg);
+.bow::after{
+    left:3px;
+    transform:rotate(-25deg);
 }
 
-.gift-wrapper.opened .gift-lid {
-    transform: translateX(-50%) translateY(-75px) rotate(-10deg);
+.gift-wrapper.opened .gift-lid{
+    transform:translateX(-50%) translateY(-75px) rotate(-10deg);
 }
 
-.gift-wrapper.opened .bow {
-    transform: translateX(-50%) translateY(-75px);
-    opacity: 0;
+.gift-wrapper.opened .bow{
+    transform:translateX(-50%) translateY(-75px);
+    opacity:0;
 }
 
-.gift-wrapper.opened .gift {
-    animation: giftShake 0.5s;
+.gift-wrapper.opened .gift{
+    animation:giftShake .5s;
 }
 
-.gift-label {
-    font-weight: 600;
-    color: #7a4655;
+.gift-label{
+    font-weight:600;
+    color:#7a4655;
 }
 
-.gift-message {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: 0.8s ease;
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.5;
+.gift-message{
+    max-height:0;
+    opacity:0;
+    overflow:hidden;
+    transition:.8s ease;
+    margin-top:10px;
+    font-size:14px;
+    line-height:1.5;
 }
 
-.gift-wrapper.opened .gift-message {
-    max-height: 120px;
-    opacity: 1;
+.gift-wrapper.opened .gift-message{
+    max-height:120px;
+    opacity:1;
 }
 
-.gift-next {
-    margin-top: 40px;
-    position: relative;
-    z-index: 50;
-    opacity: 1 !important;
-    pointer-events: auto !important;
-    transition: 0.3s;
+/* FIXED NEXT BUTTON */
+
+.gift-next{
+    margin-top:40px;
+    position:relative;
+    z-index:100;
+    opacity:1;
+    pointer-events:auto;
 }
 
-.gift-next.show {
-    opacity: 1 !important;
-    pointer-events: auto !important;
+.gift-next button{
+    position:relative;
+    z-index:101;
 }
 
-/* ---------- FINAL PAGE ---------- */
+/* FINAL */
 
-#finalPage {
-    background: linear-gradient(135deg, #fff0f4, #ffe0e9, #fff7f8);
-    text-align: center;
+#finalPage{
+    background:linear-gradient(135deg,#fff0f4,#ffe0e9,#fff7f8);
+    text-align:center;
 }
 
-.final-card {
-    width: min(700px, 92%);
-    background: rgba(255,255,255,0.7);
-    backdrop-filter: blur(18px);
-    padding: 55px 35px;
-    border-radius: 40px;
-    box-shadow: 0 25px 70px rgba(130,55,75,0.15);
-    position: relative;
-    z-index: 2;
-    animation: finalAppear 1.5s ease;
+.final-card{
+    width:min(700px,92%);
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(18px);
+    padding:55px 35px;
+    border-radius:40px;
+    box-shadow:0 25px 70px rgba(130,55,75,.15);
+    position:relative;
+    z-index:2;
+    animation:finalAppear 1.5s ease;
 }
 
-.final-flower {
-    font-size: 55px;
-    animation: float 3s ease-in-out infinite;
+.final-flower{
+    font-size:55px;
+    animation:float 3s ease-in-out infinite;
 }
 
-.final-card h1 {
-    font-size: clamp(38px, 8vw, 65px);
-    margin: 15px 0;
+.final-card h1{
+    font-size:clamp(38px,8vw,65px);
+    margin:15px 0;
 }
 
-.final-card p {
-    font-size: 19px;
-    line-height: 1.8;
+.final-card p{
+    font-size:19px;
+    line-height:1.8;
 }
 
-.heart {
-    position: absolute;
-    font-size: 20px;
-    animation: rise 7s linear infinite;
-    opacity: 0.6;
-    pointer-events: none;
+.heart{
+    position:absolute;
+    font-size:20px;
+    animation:rise 7s linear infinite;
+    opacity:.6;
+    pointer-events:none;
 }
 
-/* ---------- ANIMATIONS ---------- */
+/* ANIMATIONS */
 
-@keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
-}
-
-@keyframes giftShake {
-    0%,100% { transform: translateY(0); }
-    25% { transform: translateX(-5px) rotate(-2deg); }
-    75% { transform: translateX(5px) rotate(2deg); }
-}
-
-@keyframes finalAppear {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(.95);
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+    50%{
+        transform:translateY(-12px);
     }
 }
 
-@keyframes rise {
-    from {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
+@keyframes giftShake{
+    0%,100%{
+        transform:translateY(0);
     }
-    20% { opacity: .7; }
-    100% {
-        transform: translateY(-120px) rotate(360deg);
-        opacity: 0;
+    25%{
+        transform:translateX(-5px) rotate(-2deg);
     }
-}
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 800px) {
-    .gifts-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .message-card {
-        padding: 30px 22px;
-    }
-
-    .message-text {
-        font-size: 16px;
+    75%{
+        transform:translateX(5px) rotate(2deg);
     }
 }
 
-@media (max-width: 500px) {
-    .gifts-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+@keyframes finalAppear{
+    from{
+        opacity:0;
+        transform:translateY(30px) scale(.95);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes rise{
+    from{
+        transform:translateY(100vh) rotate(0deg);
+        opacity:0;
+    }
+    20%{
+        opacity:.7;
+    }
+    100%{
+        transform:translateY(-120px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .gifts-container{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .gift-box {
-        width: 90px;
-        height: 75px;
+    .message-card{
+        padding:30px 22px;
     }
 
-    .gift-lid {
-        width: 105px;
-        bottom: 90px;
+    .message-text{
+        font-size:16px;
+    }
+}
+
+@media(max-width:500px){
+
+    .gifts-container{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
     }
 
-    .gift-wrapper .bow {
-        bottom: 107px;
+    .gift-box{
+        width:90px;
+        height:75px;
     }
 
-    .ribbon {
-        height: 75px;
+    .gift-lid{
+        width:105px;
+        bottom:90px;
+    }
+
+    .gift-wrapper .bow{
+        bottom:107px;
+    }
+
+    .ribbon{
+        height:75px;
     }
 }
 </style>
@@ -485,310 +496,311 @@ button {
 
 <body>
 
-<!-- ================= PASSWORD PAGE ================= -->
+<!-- PASSWORD PAGE -->
 
 <section id="passwordPage" class="page active">
 
-    <div class="password-card">
+<div class="password-card">
 
-        <div class="lock">🔐</div>
+<div class="lock">🔐</div>
 
-        <h1>A Little Surprise ❤️</h1>
+<h1>A Little Surprise ❤️</h1>
 
-        <p>
-            There is something waiting for you...
-            <br>
-            But first, enter the secret password.
-        </p>
+<p>
+There is something waiting for you...
+<br>
+But first, enter the secret password.
+</p>
 
-        <input
-            type="password"
-            id="passwordInput"
-            class="password-input"
-            maxlength="6"
-            placeholder="••••••"
-        >
+<input
+type="password"
+id="passwordInput"
+class="password-input"
+maxlength="6"
+placeholder="••••••"
+>
 
-        <br>
+<br>
 
-        <button type="button" id="enterBtn" class="enter-btn">
-            Enter ❤️
-        </button>
+<button class="enter-btn" id="enterButton">
+Enter ❤️
+</button>
 
-        <div id="error" class="error">
-            Hmm... that's not the secret password 🥺
-        </div>
+<div id="error" class="error">
+Hmm... that's not the secret password 🥺
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= MESSAGE PAGE ================= -->
+<!-- MESSAGE PAGE -->
 
 <section id="messagePage" class="page">
 
-    <div class="message-card">
+<div class="message-card">
 
-        <h1>For You ❤️🌷</h1>
+<h1>For You ❤️🌷</h1>
 
-        <div id="typedMessage" class="message-text"></div>
+<div id="typedMessage" class="message-text"></div>
 
-        <div id="messageNext" class="next-container">
+<div id="messageNext" class="next-container">
 
-            <button type="button" id="messageNextBtn" class="next-btn">
-                Next → 🎀
-            </button>
+<button class="next-btn" id="messageNextButton">
+Next → 🎀
+</button>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= GIFTS PAGE ================= -->
+<!-- GIFTS PAGE -->
 
 <section id="giftsPage" class="page">
 
-    <div class="gifts-title">
+<div class="gifts-title">
 
-        <h1>Choose Your Gifts 🎁</h1>
+<h1>Choose Your Gifts 🎁</h1>
 
-        <p>
-            There are five little surprises waiting for you ❤️
-        </p>
+<p>
+There are five little surprises waiting for you ❤️
+</p>
 
-    </div>
+</div>
 
 
-    <div class="gifts-container">
+<div class="gifts-container">
 
-        <!-- GIFT 1 -->
+<!-- GIFT 1 -->
 
-        <div class="gift-wrapper">
+<div class="gift-wrapper">
 
-            <div class="gift">
+<div class="gift">
 
-                <div class="bow"></div>
+<div class="bow"></div>
+<div class="gift-lid"></div>
+<div class="gift-box"></div>
+<div class="ribbon"></div>
 
-                <div class="gift-lid"></div>
+</div>
 
-                <div class="gift-box"></div>
+<div class="gift-label">
+Gift 1 🎀
+</div>
 
-                <div class="ribbon"></div>
+<div class="gift-message">
+Let's plan a date, sanu ❤️🌷
+</div>
 
-            </div>
+</div>
 
-            <div class="gift-label">
-                Gift 1 🎀
-            </div>
 
-            <div class="gift-message">
-                Let’s plan a date, sanu ❤️🌷
-            </div>
+<!-- GIFT 2 -->
 
-        </div>
+<div class="gift-wrapper">
 
+<div class="gift">
 
-        <!-- GIFT 2 -->
+<div class="bow"></div>
+<div class="gift-lid"></div>
+<div class="gift-box"></div>
+<div class="ribbon"></div>
 
-        <div class="gift-wrapper">
+</div>
 
-            <div class="gift">
+<div class="gift-label">
+Gift 2 🎀
+</div>
 
-                <div class="bow"></div>
+<div class="gift-message">
+I wanna hangout with you 🫶🏻❤️
+</div>
 
-                <div class="gift-lid"></div>
+</div>
 
-                <div class="gift-box"></div>
 
-                <div class="ribbon"></div>
+<!-- GIFT 3 -->
 
-            </div>
+<div class="gift-wrapper">
 
-            <div class="gift-label">
-                Gift 2 🎀
-            </div>
+<div class="gift">
 
-            <div class="gift-message">
-                I wanna hangout with you 🫶🏻❤️
-            </div>
+<div class="bow"></div>
+<div class="gift-lid"></div>
+<div class="gift-box"></div>
+<div class="ribbon"></div>
 
-        </div>
+</div>
 
+<div class="gift-label">
+Gift 3 🎀
+</div>
 
-        <!-- GIFT 3 -->
+<div class="gift-message">
+Can I see something valuable? I am craving to see it. 👀❤️
+</div>
 
-        <div class="gift-wrapper">
+</div>
 
-            <div class="gift">
 
-                <div class="bow"></div>
+<!-- GIFT 4 -->
 
-                <div class="gift-lid"></div>
+<div class="gift-wrapper">
 
-                <div class="gift-box"></div>
+<div class="gift">
 
-                <div class="ribbon"></div>
+<div class="bow"></div>
+<div class="gift-lid"></div>
+<div class="gift-box"></div>
+<div class="ribbon"></div>
 
-            </div>
+</div>
 
-            <div class="gift-label">
-                Gift 3 🎀
-            </div>
+<div class="gift-label">
+Gift 4 🎀
+</div>
 
-            <div class="gift-message">
-                Can I see something valuable? I am craving to see it. 👀❤️
-            </div>
+<div class="gift-message">
+My love for you is endless. ♾️❤️
+</div>
 
-        </div>
+</div>
 
 
-        <!-- GIFT 4 -->
+<!-- GIFT 5 -->
 
-        <div class="gift-wrapper">
+<div class="gift-wrapper">
 
-            <div class="gift">
+<div class="gift">
 
-                <div class="bow"></div>
+<div class="bow"></div>
+<div class="gift-lid"></div>
+<div class="gift-box"></div>
+<div class="ribbon"></div>
 
-                <div class="gift-lid"></div>
+</div>
 
-                <div class="gift-box"></div>
+<div class="gift-label">
+Gift 5 🎀
+</div>
 
-                <div class="ribbon"></div>
+<div class="gift-message">
+Come on WhatsApp and have some talk over there… no too much 😭❤️
+</div>
 
-            </div>
+</div>
 
-            <div class="gift-label">
-                Gift 4 🎀
-            </div>
+</div>
 
-            <div class="gift-message">
-                My love for you is endless. ♾️❤️
-            </div>
 
-        </div>
+<div id="giftNext" class="gift-next">
 
+<button class="next-btn" id="finalButton">
+One Last Surprise → 🌸
+</button>
 
-        <!-- GIFT 5 -->
-
-        <div class="gift-wrapper">
-
-            <div class="gift">
-
-                <div class="bow"></div>
-
-                <div class="gift-lid"></div>
-
-                <div class="gift-box"></div>
-
-                <div class="ribbon"></div>
-
-            </div>
-
-            <div class="gift-label">
-                Gift 5 🎀
-            </div>
-
-            <div class="gift-message">
-                Come on WhatsApp and have some talk over there… no too much 😭❤️
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div id="giftNext" class="gift-next">
-
-        <button type="button" id="finalNextBtn" class="next-btn">
-            One Last Surprise → 🌸
-        </button>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ================= FINAL PAGE ================= -->
+<!-- FINAL PAGE -->
 
 <section id="finalPage" class="page">
 
-    <div class="final-card">
+<div class="final-card">
 
-        <div class="final-flower">
-            🌷
-        </div>
+<div class="final-flower">
+🌷
+</div>
 
-        <h1>
-            Good Morning, Sanu ❤️
-        </h1>
+<h1>
+Good Morning, Sanu ❤️
+</h1>
 
-        <p>
-            I hope your morning starts with a smile
-            and your whole day becomes as beautiful
-            as the smile you bring into my life. 🥹❤️
-            <br><br>
-            Take care of yourself, enjoy your day,
-            and remember that someone is thinking
-            about you. 🌸🫶🏻
-            <br><br>
-            Have a beautiful day, my love. 💗
-        </p>
+<p>
+I hope your morning starts with a smile
+and your whole day becomes as beautiful
+as the smile you bring into my life. 🥹❤️
 
-        <div style="margin-top:25px;font-size:30px;">
-            ❤️ 🌷 🎀 ✨ 🌸
-        </div>
+<br><br>
 
-    </div>
+Take care of yourself, enjoy your day,
+and remember that someone is thinking
+about you. 🌸🫶🏻
+
+<br><br>
+
+Have a beautiful day, my love. 💗
+</p>
+
+<div style="margin-top:25px;font-size:30px;">
+❤️ 🌷 🎀 ✨ 🌸
+</div>
+
+</div>
 
 </section>
 
 
 <script>
-/* ================= YAJJU NAVIGATION ================= */
 
-function switchPage(currentId, nextId) {
-    const current = document.getElementById(currentId);
-    const next = document.getElementById(nextId);
+/* ================= PAGE SWITCHING ================= */
 
-    if (!current || !next) {
-        console.error("YAJJU: Missing page:", currentId, nextId);
-        return false;
+function showPage(pageId){
+
+    document.querySelectorAll(".page").forEach(function(page){
+        page.classList.remove("active");
+    });
+
+    const page = document.getElementById(pageId);
+
+    if(page){
+        page.classList.add("active");
+        window.scrollTo(0,0);
     }
-
-    current.classList.remove("active");
-    next.classList.add("active");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    return true;
 }
+
 
 /* ================= PASSWORD ================= */
 
-function checkPassword() {
+function checkPassword(){
+
     const input = document.getElementById("passwordInput");
     const error = document.getElementById("error");
 
-    if (input.value === "984889") {
+    if(input.value === "984889"){
+
         error.style.display = "none";
-        switchPage("passwordPage", "messagePage");
-        setTimeout(startTyping, 500);
-    } else {
+
+        showPage("messagePage");
+
+        setTimeout(startTyping,500);
+
+    }else{
+
         error.style.display = "block";
+
         input.value = "";
+
         input.animate(
             [
-                { transform: "translateX(0)" },
-                { transform: "translateX(-8px)" },
-                { transform: "translateX(8px)" },
-                { transform: "translateX(0)" }
+                {transform:"translateX(0)"},
+                {transform:"translateX(-8px)"},
+                {transform:"translateX(8px)"},
+                {transform:"translateX(0)"}
             ],
-            { duration: 300 }
+            {
+                duration:300
+            }
         );
     }
 }
+
 
 /* ================= TYPING MESSAGE ================= */
 
@@ -807,147 +819,223 @@ I hope when you open it, you smile the way you make me smile every single day. �
 Now go see your little surprise, my love. 💗🌸`;
 
 let typingIndex = 0;
-let typingTimer = null;
 
-function startTyping() {
+function startTyping(){
+
     const element = document.getElementById("typedMessage");
-    if (!element) return;
 
-    clearTimeout(typingTimer);
     element.innerHTML = "";
+
     typingIndex = 0;
+
     typeCharacter();
 }
 
-function typeCharacter() {
-    const element = document.getElementById("typedMessage");
-    if (!element) return;
+function typeCharacter(){
 
-    if (typingIndex < message.length) {
+    const element = document.getElementById("typedMessage");
+
+    if(typingIndex < message.length){
+
         element.innerHTML += message.charAt(typingIndex);
+
         typingIndex++;
-        typingTimer = setTimeout(typeCharacter, 18);
-    } else {
-        document.getElementById("messageNext").classList.add("show");
+
+        setTimeout(typeCharacter,18);
+
+    }else{
+
+        document
+        .getElementById("messageNext")
+        .classList.add("show");
+
     }
 }
 
-function showGifts() {
-    switchPage("messagePage", "giftsPage");
-}
 
 /* ================= GIFTS ================= */
 
 let openedGifts = 0;
 
-function openGift(gift) {
-    if (!gift || gift.classList.contains("opened")) return;
+function openGift(gift){
+
+    if(gift.classList.contains("opened")){
+        return;
+    }
 
     gift.classList.add("opened");
+
     openedGifts++;
+
     createSparkles(gift);
 
-    // Keep the button available even if a gift was missed.
-    // It is intentionally not disabled.
-    const next = document.getElementById("giftNext");
-    if (next) next.classList.add("show");
 }
+
 
 /* ================= SPARKLES ================= */
 
-function createSparkles(element) {
-    const symbols = ["❤️", "✨", "🌸", "💗"];
+function createSparkles(element){
 
-    for (let i = 0; i < 8; i++) {
+    const symbols = [
+        "❤️",
+        "✨",
+        "🌸",
+        "💗"
+    ];
+
+    for(let i=0;i<8;i++){
+
         const sparkle = document.createElement("span");
-        sparkle.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
-        sparkle.style.position = "fixed";
+
+        sparkle.innerHTML =
+        symbols[Math.floor(Math.random()*symbols.length)];
+
+        sparkle.style.position="fixed";
 
         const rect = element.getBoundingClientRect();
-        sparkle.style.left = (rect.left + rect.width / 2) + "px";
-        sparkle.style.top = (rect.top + 60) + "px";
 
-        sparkle.style.pointerEvents = "none";
-        sparkle.style.fontSize = "20px";
-        sparkle.style.zIndex = "100";
+        sparkle.style.left =
+        (rect.left + rect.width/2)+"px";
+
+        sparkle.style.top =
+        (rect.top + 60)+"px";
+
+        sparkle.style.pointerEvents="none";
+
+        sparkle.style.fontSize="20px";
+
+        sparkle.style.zIndex="1000";
+
         document.body.appendChild(sparkle);
 
-        const x = (Math.random() - 0.5) * 180;
-        const y = (Math.random() - 0.5) * 150;
+        const x=(Math.random()-.5)*180;
+        const y=(Math.random()-.5)*150;
 
         sparkle.animate(
             [
                 {
-                    transform: "translate(0,0) scale(1)",
-                    opacity: 1
+                    transform:"translate(0,0) scale(1)",
+                    opacity:1
                 },
                 {
-                    transform: `translate(${x}px,${y}px) scale(0)`,
-                    opacity: 0
+                    transform:
+                    `translate(${x}px,${y}px) scale(0)`,
+                    opacity:0
                 }
             ],
             {
-                duration: 900,
-                easing: "ease-out"
+                duration:900,
+                easing:"ease-out"
             }
-        ).onfinish = () => sparkle.remove();
+        ).onfinish=function(){
+            sparkle.remove();
+        };
     }
 }
+
 
 /* ================= FINAL PAGE ================= */
 
-function showFinal() {
-    if (switchPage("giftsPage", "finalPage")) {
-        createHearts();
-    }
+function showFinal(){
+
+    showPage("finalPage");
+
+    createHearts();
 }
+
 
 /* ================= FLOATING HEARTS ================= */
 
-function createHearts() {
-    const finalPage = document.getElementById("finalPage");
-    if (!finalPage) return;
+function createHearts(){
 
-    // Don't create a second set every time.
-    if (finalPage.querySelector(".heart")) return;
+    for(let i=0;i<18;i++){
 
-    for (let i = 0; i < 18; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = ["❤️","💗","🌸","✨"][Math.floor(Math.random() * 4)];
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDelay = Math.random() * 6 + "s";
-        heart.style.fontSize = (15 + Math.random() * 20) + "px";
-        finalPage.appendChild(heart);
+        const heart=document.createElement("div");
+
+        heart.className="heart";
+
+        heart.innerHTML=
+        ["❤️","💗","🌸","✨"]
+        [Math.floor(Math.random()*4)];
+
+        heart.style.left=
+        Math.random()*100+"vw";
+
+        heart.style.animationDelay=
+        Math.random()*6+"s";
+
+        heart.style.fontSize=
+        (15+Math.random()*20)+"px";
+
+        document
+        .getElementById("finalPage")
+        .appendChild(heart);
     }
 }
 
+
 /* ================= BUTTON EVENTS ================= */
 
-document.addEventListener("DOMContentLoaded", function () {
-    const enterBtn = document.getElementById("enterBtn");
-    const messageNextBtn = document.getElementById("messageNextBtn");
-    const finalNextBtn = document.getElementById("finalNextBtn");
-    const passwordInput = document.getElementById("passwordInput");
+/* Password */
 
-    if (enterBtn) enterBtn.addEventListener("click", checkPassword);
-    if (messageNextBtn) messageNextBtn.addEventListener("click", showGifts);
-    if (finalNextBtn) finalNextBtn.addEventListener("click", showFinal);
+document
+.getElementById("enterButton")
+.addEventListener("click",function(){
 
-    document.querySelectorAll(".gift-wrapper").forEach(function (gift) {
-        gift.addEventListener("click", function () {
-            openGift(gift);
-        });
-    });
+    checkPassword();
 
-    if (passwordInput) {
-        passwordInput.addEventListener("keydown", function (event) {
-            if (event.key === "Enter") checkPassword();
-        });
+});
+
+
+/* Enter key */
+
+document
+.getElementById("passwordInput")
+.addEventListener("keydown",function(event){
+
+    if(event.key==="Enter"){
+        checkPassword();
     }
 
-    console.log("YAJJU loaded successfully ❤️");
 });
+
+
+/* Message Next */
+
+document
+.getElementById("messageNextButton")
+.addEventListener("click",function(){
+
+    showPage("giftsPage");
+
+});
+
+
+/* Gift clicking */
+
+document
+.querySelectorAll(".gift-wrapper")
+.forEach(function(gift){
+
+    gift.addEventListener("click",function(){
+
+        openGift(gift);
+
+    });
+
+});
+
+
+/* FINAL BUTTON */
+
+document
+.getElementById("finalButton")
+.addEventListener("click",function(){
+
+    showFinal();
+
+});
+
 </script>
 
 </body>
