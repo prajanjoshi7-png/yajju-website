@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Yajju ❤️</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+}
+
+body{
+    background:#08060a;
+    color:white;
+    font-family:Georgia,serif;
+    overflow:hidden;
+}
+
+
+/* =========================
+   PAGES
+========================= */
+
+.page{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:30px 20px;
+
+    overflow-y:auto;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #381323 0%,
+        #160a11 45%,
+        #08060a 85%
+    );
+}
+
+.page.active{
+    display:flex;
+
+    animation:pageEnter .8s ease;
+}
+
+
+.content{
+    width:100%;
+    max-width:900px;
+
+    text-align:center;
+
+    position:relative;
+    z-index:5;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.eyebrow{
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:#e98aa7;
+
+    opacity:.8;
+}
+
+h1{
+    font-size:clamp(65px,15vw,140px);
+
+    font-weight:400;
+
+    font-style:italic;
+
+    margin:15px 0;
+}
+
+h2{
+    font-size:clamp(38px,7vw,75px);
+
+    font-weight:400;
+
+    margin:20px 0 30px;
+}
+
+h3{
+    font-size:22px;
+
+    font-weight:400;
+
+    margin:0 0 8px;
+}
+
+p{
+    font-family:Arial,sans-serif;
+
+    color:#ddd;
+
+    line-height:1.8;
+}
+
+.intro{
+    font-size:18px;
+
+    margin:25px auto 40px;
+}
+
+.description{
+    max-width:700px;
+
+    margin:0 auto 40px;
+
+    font-size:16px;
+}
+
+.quote{
+    max-width:600px;
+
+    margin:35px auto;
+
+    color:#e89bb2;
+
+    font-style:italic;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.main-button{
+
+    border:1px solid #df7197;
+
+    background:transparent;
+
+    color:white;
+
+    padding:15px 32px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-family:Arial,sans-serif;
+
+    font-size:13px;
+
+    letter-spacing:1px;
+
+    transition:.35s;
+}
+
+.main-button:hover{
+
+    background:#b51f54;
+
+    box-shadow:0 0 35px #b51f5470;
+
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   FIRST PAGE
+========================= */
+
+.heart{
+
+    font-size:75px;
+
+    color:#e76590;
+
+    animation:heartbeat 1.5s infinite;
+}
+
+
+/* =========================
+   JOURNEY
+========================= */
+
+.journey{
+
+    max-width:650px;
+
+    margin:45px auto;
+
+    text-align:left;
+}
+
+.journey-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:22px;
+
+    padding:20px 25px;
+
+    background:rgba(255,255,255,.035);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(12px);
+
+    transition:.4s;
+}
+
+.journey-item:hover{
+
+    transform:translateX(8px);
+
+    background:rgba(255,255,255,.06);
+
+    box-shadow:0 15px 45px rgba(0,0,0,.35);
+}
+
+.journey-icon{
+
+    min-width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(220,80,125,.12);
+
+    border:1px solid rgba(230,105,145,.4);
+
+    color:#ed8da8;
+
+    font-size:22px;
+}
+
+.journey-item p{
+
+    margin:0;
+
+    color:#bbb;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+.journey-line{
+
+    width:1px;
+
+    height:35px;
+
+    margin-left:48px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        transparent,
+        #e56a91,
+        transparent
+    );
+}
+
+
+/* =========================
+   LOVE PAGE
+========================= */
+
+.love-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin:40px auto;
+}
+
+.love-card{
+
+    padding:30px 20px;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff15;
+
+    border-radius:22px;
+
+    backdrop-filter:blur(10px);
+}
+
+.love-card span{
+
+    font-size:42px;
+
+    color:#e56a91;
+}
+
+.love-card p{
+
+    font-size:14px;
+
+    color:#bbb;
+}
+
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin:45px auto;
+}
+
+.time-box{
+
+    width:120px;
+
+    padding:22px 10px;
+
+    background:#ffffff08;
+
+    border:1px solid #ffffff15;
+
+    border-radius:18px;
+}
+
+.time-box strong{
+
+    display:block;
+
+    font-size:38px;
+
+    color:#ed8da8;
+}
+
+.time-box small{
+
+    font-family:Arial;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    opacity:.6;
+}
+
+
+/* =========================
+   POLAROIDS
+========================= */
+
+.polaroids{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin:50px auto;
+}
+
+.polaroid{
+
+    width:210px;
+
+    background:#f5f0eb;
+
+    padding:10px 10px 25px;
+
+    box-shadow:0 20px 60px #0009;
+}
+
+.polaroid div{
+
+    width:100%;
+
+    height:190px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #35121f,
+        #160a11
+    );
+
+    color:#e98aa7;
+
+    font-size:50px;
+}
+
+.polaroid p{
+
+    color:#24151b;
+
+    margin:10px 0 0;
+
+    font-family:Georgia;
+}
+
+.first{
+    transform:rotate(-7deg);
+}
+
+.second{
+    transform:rotate(3deg) translateY(-18px);
+}
+
+.third{
+    transform:rotate(7deg);
+}
+
+
+/* =========================
+   POPUP
+========================= */
+
+.popup{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:100;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#050307dd;
+
+    backdrop-filter:blur(15px);
+}
+
+.popup.show{
+
+    display:flex;
+
+    animation:fadeIn .7s ease;
+}
+
+.popup-box{
+
+    width:90%;
+
+    max-width:600px;
+
+    padding:50px 25px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:#1a0c14;
+
+    border:1px solid #ffffff18;
+
+    box-shadow:0 30px 100px #000;
+
+    animation:popupScale .7s ease;
+}
+
+.popup-heart{
+
+    font-size:70px;
+
+    animation:heartbeat 1.5s infinite;
+}
+
+
+/* =========================
+   SECRET
+========================= */
+
+.secret-message{
+
+    display:none;
+}
+
+.secret-message.show{
+
+    display:block;
+
+    animation:secretReveal 2s ease;
+}
+
+.secret-heart{
+
+    font-size:65px;
+
+    animation:heartbeat 1.5s infinite;
+}
+
+#typingText{
+
+    max-width:720px;
+
+    margin:30px auto;
+
+    font-family:Georgia,serif;
+
+    font-size:18px;
+
+    line-height:2;
+}
+
+.hidden{
+    display:none;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.huge-heart{
+
+    font-size:100px;
+
+    animation:heartbeat 1.5s infinite;
+}
+
+.signature{
+
+    color:#e98aa7;
+
+    font-family:Georgia;
+
+    font-style:italic;
+
+    font-size:20px;
+}
+
+.stars{
+
+    margin-top:35px;
+
+    color:#e98aa7;
+
+    letter-spacing:12px;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-button{
+
+    position:fixed;
+
+    right:20px;
+
+    top:20px;
+
+    z-index:200;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:1px solid #ffffff30;
+
+    background:#ffffff12;
+
+    color:white;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(10px);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes pageEnter{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.96) translateY(20px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1) translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+
+    from{opacity:0;}
+
+    to{opacity:1;}
+}
+
+@keyframes popupScale{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.75);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+}
+
+@keyframes secretReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+        filter:blur(15px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+        filter:blur(0);
+    }
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+
+        transform:scale(1);
+    }
+
+    50%{
+
+        transform:scale(1.15);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .love-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .journey-item{
+
+        padding:18px;
+
+        gap:15px;
+    }
+
+    .journey-icon{
+
+        min-width:42px;
+
+        height:42px;
+    }
+
+    .journey-line{
+
+        margin-left:39px;
+    }
+
+    .polaroids{
+
+        flex-direction:column;
+    }
+
+    .first,
+    .second,
+    .third{
+
+        transform:rotate(0);
+    }
+
+    .time-box{
+
+        width:100px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio id="bgMusic" loop>
+
+    <source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+
+<button
+    id="musicButton"
+    class="music-button"
+    onclick="toggleMusic()">
+
+    🔇
+
+</button>
+
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section class="page active" id="page1">
+
+    <div class="content">
+
+        <p class="eyebrow">
+            A LITTLE SURPRISE FOR YOU
+        </p>
+
+        <h1>
+            Yajju
+        </h1>
+
+        <div class="heart">
+            ♡
+        </div>
+
+        <p class="intro">
+
+            Some stories are written in books...
+            <br>
+
+            ours was written in little moments.
+
+        </p>
+
+        <button
+            class="main-button"
+            onclick="openSurprise()">
+
+            OPEN MY SURPRISE ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<section class="page" id="page2">
+
+    <div class="content">
+
+        <p class="eyebrow">
+            CHAPTER ONE
+        </p>
+
+        <h2>
+            Where Our Journey Began
+        </h2>
+
+        <p class="description">
+
+            Every beautiful story has a beginning.
+
+            <br><br>
+
+            Ours didn't begin with some grand
+            movie-like moment.
+
+            <br><br>
+
+            It began quietly...
+
+            A conversation.
+            A little curiosity.
+            A few smiles.
+
+            <br><br>
+
+            And somehow, without even realizing it,
+            two people slowly started becoming
+            important to each other.
+
+        </p>
+
+
+        <div class="journey">
+
+
+            <div class="journey-item">
+
+                <div class="journey-icon">
+                    ✦
+                </div>
+
+                <div>
+
+                    <h3>
+                        The Beginning
+                    </h3>
+
+                    <p>
+                        The first conversations that
+                        started something neither of us
+                        knew would become so meaningful.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-line"></div>
+
+
+            <div class="journey-item">
+
+                <div class="journey-icon">
+                    ♡
+                </div>
+
+                <div>
+
+                    <h3>
+                        Getting Closer
+                    </h3>
+
+                    <p>
+                        Slowly, the conversations became
+                        longer, the smiles became easier,
+                        and your presence started feeling
+                        special.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-line"></div>
+
+
+            <div class="journey-item">
+
+                <div class="journey-icon">
+                    ∞
+                </div>
+
+                <div>
+
+                    <h3>
+                        Becoming Us
+                    </h3>
+
+                    <p>
+                        Somewhere along the way,
+                        "you" and "me" started feeling
+                        a little more like "us."
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <p class="quote">
+
+            "Sometimes the most beautiful stories
+            begin with something as simple as
+            two people talking."
+
+        </p>
+
+
+        <button
+            class="main-button"
+            onclick="nextPage(3)">
+
+            CONTINUE →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 3
+========================= -->
+
+<section class="page" id="page3">
+
+    <div class="content">
+
+        <p class="eyebrow">
+            CHAPTER TWO
+        </p>
+
+        <h2>
+            Our Love Story
+        </h2>
+
+        <p class="description">
+
+            Somewhere between all the conversations,
+            laughs, arguments, caring moments and
+            late-night talks...
+
+            <br><br>
+
+            you became more than just someone
+            I talked to.
+
+            <br><br>
+
+            You became someone I cared about deeply.
+
+        </p>
+
+
+        <div class="love-grid">
+
+
+            <div class="love-card">
+
+                <span>♡</span>
+
+                <h3>
+                    The Laughs
+                </h3>
+
+                <p>
+                    The random conversations,
+                    silly moments and little things
+                    that became some of my favorite memories.
+                </p>
+
+            </div>
+
+
+            <div class="love-card">
+
+                <span>∞</span>
+
+                <h3>
+                    The Memories
+                </h3>
+
+                <p>
+                    Every little memory with you
+                    became another piece of our story.
+                </p>
+
+            </div>
+
+
+            <div class="love-card">
+
+                <span>♥</span>
+
+                <h3>
+                    The Love
+                </h3>
+
+                <p>
+                    Through everything, there has
+                    always been something that keeps
+                    bringing our hearts closer.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="nextPage(4)">
+
+            SEE WHERE WE ARE NOW →
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 4
+========================= -->
+
+<section class="page" id="page4">
+
+    <div class="content">
+
+        <p class="eyebrow">
+            CHAPTER THREE
+        </p>
+
+        <h2>
+            And Right Now...
+        </h2>
+
+        <p class="description">
+
+            Look at us.
+
+            <br><br>
+
+            Still here.
+            Still writing our story.
+
+            <br><br>
+
+            And this moment right here
+            is another memory we'll someday
+            look back on.
+
+        </p>
+
+
+        <div class="counter">
+
+            <div class="time-box">
+
+                <strong id="days">0</strong>
+
+                <small>DAYS</small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <strong id="hours">0</strong>
+
+                <small>HOURS</small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <strong id="minutes">0</strong>
+
+                <small>MINUTES</small>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <strong id="seconds">0</strong>
+
+                <small>SECONDS</small>
+
+            </div>
+
+        </div>
+
+
+        <p class="quote">
+
+            "The story isn't finished...
+            it's still being written."
+
+        </p>
+
+
+        <button
+            class="main-button"
+            onclick="nextPage(5)">
+
+            THERE'S MORE... ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 5
+========================= -->
+
+<section class="page" id="page5">
+
+    <div class="content">
+
+        <p class="eyebrow">
+            CHAPTER FOUR
+        </p>
+
+        <h2>
+            Little Pieces Of Us
+        </h2>
+
+        <p class="description">
+
+            Three little memories...
+
+            <br>
+
+            but there's more than you know.
+
+        </p>
+
+
+        <div class="polaroids">
+
+
+            <div class="polaroid first">
+
+                <div>♡</div>
+
+                <p>
+                    That moment ❤️
+                </p>
+
+            </div>
+
+
+            <div class="polaroid second">
+
+                <div>∞</div>
+
+                <p>
+                    Just us.
+                </p>
+
+            </div>
+
+
+            <div class="polaroid third">
+
+                <div>♥</div>
+
+                <p>
+                    A memory forever.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="showSecretPopup()">
+
+            THERE'S MORE... ✨
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     POPUP
+========================= -->
+
+<div id="secretPopup" class="popup">
+
+    <div class="popup-box">
+
+        <div class="popup-heart">
+            ❤️
+        </div>
+
+        <p class="eyebrow">
+            WAIT...
+        </p>
+
+        <h2>
+            You thought that was everything?
+        </h2>
+
+        <p>
+            I kept one thing hidden just for you.
+        </p>
+
+        <button
+            class="main-button"
+            onclick="closePopupAndReveal()">
+
+            SHOW ME ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     PAGE 6
+========================= -->
+
+<section class="page" id="page6">
+
+    <div class="content">
+
+        <div id="secretIntro">
+
+            <p class="eyebrow">
+                MY SECRET
+            </p>
+
+            <h2>
+                There is something
+                I want you to know...
+            </h2>
+
+            <button
+                class="main-button"
+                onclick="revealSecret()">
+
+                OPEN MY HEART ❤️
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="secretMessage"
+            class="secret-message">
+
+            <div class="secret-heart">
+                ❤️
+            </div>
+
+            <h2>
+                Happy First Anniversary, Mero Mutu ❤️
+            </h2>
+
+            <p id="typingText"></p>
+
+            <button
+                id="finalButton"
+                class="main-button hidden"
+                onclick="nextPage(7)">
+
+                ONE LAST PAGE →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE 7
+========================= -->
+
+<section class="page" id="page7">
+
+    <div class="content">
+
+        <div class="huge-heart">
+            ❤️
+        </div>
+
+        <p class="eyebrow">
+            THE END OF THIS CHAPTER
+        </p>
+
+        <h1>
+            But not our story.
+        </h1>
+
+        <p class="description">
+
+            Thank you for being one of
+            the most beautiful parts
+            of my life.
+
+        </p>
+
+        <h2>
+            Happy 1 Year Talking Stage ❤️
+        </h2>
+
+        <p class="signature">
+            — You Sana
+        </p>
+
+        <div class="stars">
+            ✦ ✧ ✦ ✧ ✦
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =========================
+   PAGE NAVIGATION
+========================= */
+
+function nextPage(pageNumber){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(function(page){
+
+            page.classList.remove("active");
+
+        });
+
+
+    const page =
+        document.getElementById(
+            "page" + pageNumber
+        );
+
+
+    if(page){
+
+        page.classList.add("active");
+
+    }
+
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+const music =
+    document.getElementById("bgMusic");
+
+
+function startMusic(){
+
+    music.volume = 0.4;
+
+    music.play()
+        .then(function(){
+
+            document.getElementById(
+                "musicButton"
+            ).innerHTML = "🔊";
+
+        })
+        .catch(function(){
+
+            console.log("Music blocked.");
+
+        });
+
+}
+
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play();
+
+        document.getElementById(
+            "musicButton"
+        ).innerHTML = "🔊";
+
+    }
+
+    else{
+
+        music.pause();
+
+        document.getElementById(
+            "musicButton"
+        ).innerHTML = "🔇";
+
+    }
+
+}
+
+
+/* =========================
+   FIRST BUTTON
+========================= */
+
+function openSurprise(){
+
+    startMusic();
+
+    nextPage(2);
+
+}
+
+
+/* =========================
+   COUNTER
+========================= */
+
+/*
+   CHANGE THIS DATE
+   IF YOU WANT A DIFFERENT START DATE.
+
+   October = 9
+*/
+
+const relationshipStart =
+    new Date(
+        2026,
+        2,
+        6,
+        0,
+        6,
+        0
+    );
+
+
+function updateCounter(){
+
+    const now = new Date();
+
+    const difference =
+        now - relationshipStart;
+
+
+    if(difference < 0)
+        return;
+
+
+    const totalSeconds =
+        Math.floor(
+            difference / 1000
+        );
+
+
+    const days =
+        Math.floor(
+            totalSeconds / 86400
+        );
+
+
+    const hours =
+        Math.floor(
+            (totalSeconds % 86400) / 3600
+        );
+
+
+    const minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
+
+
+    const seconds =
+        totalSeconds % 60;
+
+
+    document.getElementById(
+        "days"
+    ).innerText = days;
+
+
+    document.getElementById(
+        "hours"
+    ).innerText = hours;
+
+
+    document.getElementById(
+        "minutes"
+    ).innerText = minutes;
+
+
+    document.getElementById(
+        "seconds"
+    ).innerText = seconds;
+
+}
+
+
+setInterval(
+    updateCounter,
+    1000
+);
+
+updateCounter();
+
+
+
+/* =========================
+   POPUP
+========================= */
+
+function showSecretPopup(){
+
+    document
+        .getElementById("secretPopup")
+        .classList.add("show");
+
+}
+
+
+function closePopupAndReveal(){
+
+    document
+        .getElementById("secretPopup")
+        .classList.remove("show");
+
+    nextPage(6);
+
+}
+
+
+
+/* =========================
+   SECRET MESSAGE
+========================= */
+
+function revealSecret(){
+
+    document
+        .getElementById("secretIntro")
+        .style.display = "none";
+
+
+    const message =
+        document.getElementById(
+            "secretMessage"
+        );
+
+
+    message.classList.add("show");
+
+
+    typeMessage();
+
+}
+
+
+function typeMessage(){
+
+    const text = `Happy first anniversary of our talking stage mero mutu😘
+
+Tra malai lagdaina ki hami bolna thaleako 1 year vaisakyo vanera honestly it feels so unreal kanxu.
+Hami bolna thaleko nhi aaja 1 year vaisakyo ani somehow yo one year ma you became such a beautiful and important part of my life sanu😘😘. What started with a simple conversation about bike slowly became something that I just couldn't loose sanu😔.
+
+Do you know I was just too terrified when I got your text for the first time. I just couldn't imagine whom you thought your enemy has been a part of your life with whom you may have a future👅👅. Somewhere between our random talks, laughs, arguments, late night conversation and all those tiny moments😝😝, you became someone my heart got used to having around🌺🌺
+
+Sanu before you came into my life everything sometimes feels like a dessert (dry quite and was like missing something) I couldn't even explain it properly😔. But since the day we started talking it feels like my life has became a garden in the centre of a dry dessert🌺🌺.
+
+You brought colours in my faded life and coloured again😛😛, you gave me the love I never imagined of getting one, you let me feel how loved can be feeling vanera, you became my warmth whenever I felt cold, and the happiness whenever I was just too sad kanxu🥺🥺.
+
+Sanu timlai tha xw ki xaina malai tha vyana tra timi mero life ma aaye dekhi my life has changed a lot btw😁😁 and I am just happy about it😛😛. Btw kanxu I truly hope you know that having you beside me has made my world feel much more beautiful😛😛
+
+And there is you my beautiful wife(calling you rn cause I have planned a future lw), I could write thousands of words about how beautiful you are and still feel like I haven't said enough.
+
+Sanu it's not only your beautiful eyes, your face, your way of smiling, your hair or the way you look in every photos🌺🌺 that makes me fall for you😭. Sanu timi ma yauta yesto jadu xw ki Jun timro appearance Vanda farak xw🤧. The way you talk, the way you smile, the little expression you make, the way you care for me, even the smallest things you do turns out to have it's own kind of beauty.
+
+You are beautiful in a way sanu that makes my heart to pump fast and makes me to stop and think like how could a guy like me can even pull a girl like this beautiful, how did I even get this lucky vanera.
+
+Sometimes I genuinely what good things I have done to deserve someone like you sanu😘😘. Out of all the people I could have met, somehow life brought you to me😝😝. Ani sacchi Vanda maile aafu le aafu lai sadai harek din bhagyamani sochxu sanu cause you are with me😝😝.
+
+Kanxu I feel incredibly lucky that I got to know you, lucky that I got sttacyto you😘😘, lucky that I got to be a part of your life sanu, and luckiest that I can call you mine😝😝.
+
+Kanxu we had our beautiful days, our difficult days, misunderstandings, moments when things didn't feel perfect, and many times when we probably didn't understand each other the way we wanted to🥺. But even through all of that you are still the person for whom my heart plumps sanu🌺🌺. And you are the person my heart always chooses👅.
+
+Sanu what we have isn't just about perfect moments. It's just about everything we have experienced together and still being here, still caring, still trying, and still having a place for each other in our hearts❤️❤️.
+
+This one year of talking isn't just a random moment to me Kali😛😛, it's just a collection of memories that I will always carry with me everywhere🌺🌺. Every conversation every laugh, every good morning, every good night every little concern every silly moment every time you made me smile without even trying all of it means something to me.
+
+So today, I just want to say thank you. Thank you for coming into my life. Thank you for giving me memories I wouldn't have had without you. Thank you for letting me know your heart, your happiness your worries, your little moods and all the beautiful sides of you. Thank you for being who you are for me sanu😛
+
+Malai nhi taxaina timlai nhi taxaina sanu about our future kanxu🤧 abo k hunxa k hunxa no one knows💔. Tra if I could go back to the begging I would still choose to start the first conservation with you Kali😛😛. I would still choose to know you sanu🌺. And I would still choose every laugh, every conservation, every little moments, and every moment we have made.
+🌺😘😘
+
+One year ago you were just someone I was talking to😛
+Today you are someone I can't imagine my life without you kanxu😭😭
+
+Happy one year of our talking stage sanu🌺🌺. Thank you for turning my dessert into my garden, for being colours into my faded area and for being one of the most beautiful person that I have ever met❤️‍🩹
+
+I hope you always know how precious you are to me vanera kanxu 😝😝. And whenever you look at yourself and wonder if you're beautiful, I hope you remember that somewhere there's a boy who looks at you and still can't believe that he got lucky enough to have you in his life.
+
+I love you sanu😘
+Here's to the first year of our story, and to all the beautiful memories still waiting for us 🫶🏻🌷
+
+I hope our childhood love became a unbreakable bond in the future😘😘
+Love you so much kanxuu muhuwaa 🤤🤤`;
+
+
+    const element =
+        document.getElementById(
+            "typingText"
+        );
+
+
+    const button =
+        document.getElementById(
+            "finalButton"
+        );
+
+
+    element.innerHTML = "";
+
+    let i = 0;
+
+
+    function type(){
+
+        if(i < text.length){
+
+            if(text[i] === "\n"){
+
+                element.innerHTML +=
+                    "<br><br>";
+
+            }
+
+            else{
+
+                element.innerHTML +=
+                    text[i];
+
+            }
+
+            i++;
+
+            setTimeout(
+                type,
+                25
+            );
+
+        }
+
+        else{
+
+            button.classList.remove(
+                "hidden"
+            );
+
+        }
+
+    }
+
+
+    type();
+
+}
+
+</script>
+
+</body>
+</html>
